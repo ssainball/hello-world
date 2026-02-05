@@ -1,5 +1,24 @@
 body {
-  background: #111;
-  color: white;
-  text-align: center;
+  :root {
+  --bg: #0f172a;
+  --panel: #020617;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1e293b;
+  --accent: #38bdf8;
+  --code-bg: #020617;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.75;
+}
+
 }
