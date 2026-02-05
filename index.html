@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Claude Attifact Clone</title>
-  
-  <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+  <title>Claude Artifact Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0f172a;
-    color: #e5e7eb;
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
 
-  }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
 
-  main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 24px;
-  }
-
-      button {
+    button {
       padding: 12px 20px;
       font-size: 16px;
       border-radius: 8px;
@@ -35,30 +31,5 @@
     button:hover {
       opacity: 0.9;
     }
-
   </style>
 </head>
-
-  
-  
-  <body>
-  <main>
-    <h1 id="title"> Claude Artifact Clone </h1>
-    <button id="notebookLMbutton"> 눌러보세요 </button>
-    <section class="artifact">
-    </section>
-  </main>
-
-    <script>
-
-      const button = document.getElementById("notebookLMbutton");
-      const title = document.getElementById("title");
-
-      button.addEventListener("click", function () {
-        title.textContent = "버튼이 눌렸습니다. 🚀🚀";
-      });
-    </script>
-
-</body>
-</html>
-
