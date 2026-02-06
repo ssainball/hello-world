@@ -7,15 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const win = window.open(
       "about:blank",
       "_blank",
-      "width=720, height=900, noopener, noreferrer"
+      "width=720,height=900,noopener,noreferrer"
       );
 
     if(!win) {
-      alert("팝업이 차단되었습니다. 브라우저 주소창 오른쪽의 팝업 차단을 해제해주세요.);
+      alert("팝업이 차단되었습니다. 브라우저 주소창 오른쪽의 팝업 차단을 해제해주세요.");
             return;
     }
   
-
     win.document.write(`
       <!DOCTYPE html>
       <html lang="ko">
