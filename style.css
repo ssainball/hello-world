@@ -1,77 +1,32 @@
 body {
-  :root {
-  --bg: #0f172a;
-  --panel: #020617;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --border: #1e293b;
-  --accent: #38bdf8;
-  --code-bg: #020617;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.75;
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
-  main {
-  max-width: 880px;
+main {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: 40px 24px;
 }
 
-  h1 {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  cursor: pointer;
 }
 
-h2 {
-  font-size: 1.6rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+button:hover {
+  opacity: 0.9;
 }
 
-h3 {
-  font-size: 1.25rem;
-  margin-top: 2rem;
-}
-
-p {
-  color: var(--text);
-  margin: 1rem 0;
-}
-
-p.muted {
-  color: var(--muted);
-}
-
-section.artifact {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px;
-  margin-bottom: 32px;
-}
-
-pre {
-  background: var(--code-bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px;
-  overflow-x: auto;
-  margin: 24px 0;
-}
-
-code {
-  font-family: "JetBrains Mono", "Fira Code", monospace;
-  font-size: 0.95rem;
-}
-
+#output {
+  white-space: pre-wrap;
+  margin-top: 20px;
 }
