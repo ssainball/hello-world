@@ -1,9 +1,14 @@
 let isOpen = false;
 
-document.getElementById("myButton").onclick = function () {
-  const output = document.getElementById("output");
 
-  if (isOpen === false) {
+const mainButton = document.getElementById("myButton");
+const output = document.getElementById("output");
+const copyButton = document.getElementById("copyButton");
+
+copyButton.style.display = "none";
+
+mainButton.onclick = function () {
+  if(!isOpen) {
     output.textContent =
 `[NotebookLM 슬라이드 디자인 요청]
 
@@ -38,9 +43,11 @@ Ben-Day dots
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
-    this.textContent = "닫기";
+    mainButton.textContent = "닫기";
     copyButton.style.display = "inline-block";
+    copyButton.textContent = "📋 복사하기";
     isOpen = true;
+    
   } else {
     output.textContent = "";
     this.textContent = "슬라이더 데크 프람프트(마벨 코믹스)";
@@ -53,3 +60,6 @@ copyButton.onclick = function () {
   navigator.clipboard.writeText(output.textContent);
   copyButton.textContent = "✅ 복사됨!";
 };
+
+
+
