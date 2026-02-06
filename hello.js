@@ -1,18 +1,17 @@
-let isOpen = false;
-
 document.addEventListener("DOMContentLoaded", function () {
 
   
 const mainButton = document.getElementById("myButton");
 const webtoonButton = document.getElementById("webtoonButton");
-const output = document.getElementById("output");
-const copyButton = document.getElementById("copyButton");
+const outputMarvel = document.getElementById("output-marvel");
+const outputWebtoon = document.getElementById("output-webtoon");
 
+const copyButton = document.getElementById("copyButton");
 
 copyButton.style.display = "none";
 
 mainButton.onclick = function () {
-  output.textContent =
+  outputMarvel.textContent =
 `[NotebookLM 슬라이드 디자인 요청]
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 팝 코믹스
@@ -55,7 +54,7 @@ copyButton.textContent = "📋 복사하기";
    네이버 웹툰 버튼
 ====================== */
 webtoonButton.onclick = function(){
-output.textContent = 
+outputWebtoon.textContent = 
 `[NotebookLM 슬라이드 디자인 요청]
 
 ■ 역할: 전문 프레젠테이션 디자이너
@@ -89,8 +88,9 @@ output.textContent =
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
-copyButton.style.display = "inline-block";
-copyButton.textContent = "📋 복사하기";
+  outputMarvel.textContent = "";
+  copyButton.style.display = "inline-block";
+
 };
 
 
@@ -98,12 +98,10 @@ copyButton.textContent = "📋 복사하기";
    복사 버튼
 ====================== */
 copyButton.onclick = function () {
-  navigator.clipboard.writeText(output.textContent);
+  const text = outputMarvel.textContent || outputWebtoon.textContent;
+  navigator.clipboard.writeText(text);
   copyButton.textContent = "✅ 복사됨!";
-
-  setTimeout(() => {
-    copyButton.textContent = "📋 복사하기";
-  }, 1500);
+  setTimeout(() => copyButton.textContent = "📋 복사하기", 1500);
 
 };
 
