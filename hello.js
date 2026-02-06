@@ -1,6 +1,8 @@
 let isOpen = false;
 
+document.addEventListener("DOMContentLoaded", function () {
 
+  
 const mainButton = document.getElementById("myButton");
 const webtoonButton = document.getElementById("webtoonButton");
 const output = document.getElementById("output");
@@ -104,3 +106,5 @@ copyButton.onclick = function () {
   }, 1500);
 
 };
+
+});
