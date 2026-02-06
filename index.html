@@ -34,4 +34,29 @@
     }
   </style>
 
+
 </head>
+
+
+
+<body>
+  <main></main>
+    <button id="notebookLMbutton">눌러보세요</button>
+    <section class="artifact">
+    </section>
+  </main>
+
+  <script>
+    const button = document.getElementByID("notebookLMbutton");
+    const artifactionSection = document.querySelector(".artifact");
+
+    button.addEventListener("click", function() {
+      artifactSection.innerHTML = '
+        <h2> ⚡Artifact 내용 </h2>
+        <p> 버튼을 누르면이 글이 나타납니다. </p> 
+      ;
+    });
+  </script>
+  
+</body>
+</html>
