@@ -10,6 +10,10 @@ const copyButton = document.getElementById("copyButton");
 
 copyButton.style.display = "none";
 
+
+  /* ======================
+   마벨 버튼
+====================== */
 mainButton.onclick = function () {
   outputMarvel.textContent =
 `[NotebookLM 슬라이드 디자인 요청]
@@ -44,10 +48,10 @@ Ben-Day dots
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
+outputWebtoon.textContent = "";
 copyButton.style.display = "inline-block";
 copyButton.textContent = "📋 복사하기";
 };
-
 
 
 /* ======================
