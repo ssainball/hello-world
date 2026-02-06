@@ -14,7 +14,7 @@ main {
 
 .button-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 12px;
   margin-bottom: 20px;
 }
