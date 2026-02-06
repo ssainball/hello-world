@@ -1,5 +1,10 @@
+let isOpen = false;
+
 document.getElementById("myButton").onclick = function () {
-  document.getElementById("output").textContent =
+  const output = document.getElementById("output");
+
+  if (isOpen === false) {
+    output.textContent =
 `[NotebookLM 슬라이드 디자인 요청]
 
 ■ 역할: 전문 프레젠테이션 디자이너
@@ -31,6 +36,13 @@ Ben-Day dots
 
 ━━━━━━━━━━━━━━━━━━━━━━
 
-위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.
-`;
+위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
+
+    this.textContent = "닫기";
+    isOpen = true;
+  } else {
+    output.textContent = "";
+    this.textContent = "버튼을 누르면 슬라이더 데크 프람프트 출력";
+    isOpen = false;
+  }
 };
