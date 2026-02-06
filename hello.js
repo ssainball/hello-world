@@ -10,8 +10,7 @@ const copyButton = document.getElementById("copyButton");
 copyButton.style.display = "none";
 
 mainButton.onclick = function () {
-  if(!isOpen) {
-    output.textContent =
+  output.textContent =
 `[NotebookLM 슬라이드 디자인 요청]
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 팝 코믹스
@@ -44,13 +43,15 @@ Ben-Day dots
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
-    // mainButton.textContent = "닫기";
-    copyButton.style.display = "inline-block";
-    copyButton.textContent = "📋 복사하기";
-    isOpen = true;
-    
-  } 
-  
+copyButton.style.display = "inline-block";
+copyButton.textContent = "📋 복사하기";
+};
+
+
+
+/* ======================
+   네이버 웹툰 버튼
+====================== */
 webtoonButton.onclick = function(){
 output.textContent = 
 `[NotebookLM 슬라이드 디자인 요청]
@@ -88,8 +89,12 @@ output.textContent =
 
 copyButton.style.display = "inline-block";
 copyButton.textContent = "📋 복사하기";
-isOpen = true;
+};
 
+
+/* ======================
+   복사 버튼
+====================== */
 copyButton.onclick = function () {
   navigator.clipboard.writeText(output.textContent);
   copyButton.textContent = "✅ 복사됨!";
@@ -97,4 +102,5 @@ copyButton.onclick = function () {
   setTimeout(() => {
     copyButton.textContent = "📋 복사하기";
   }, 1500);
+
 };
