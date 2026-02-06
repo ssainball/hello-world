@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-
   const marvelButton = document.getElementById("marvelButton");
   const webtoonButton = document.getElementById("webtoonButton");
 
   function openPromptWindow(title, content) {
-    const win = window.open("", "_blank");
+    const win = window.open(
+      "about:blank",
+      "_blank",
+      "width=720, height=900, noopener, noreferrer"
+      );
+
+    if(!win) {
+      alert("팝업이 차단되었습니다. 브라우저 주소창 오른쪽의 팝업 차단을 해제해주세요.);
+            return;
+    }
   
 
     win.document.write(`
@@ -43,16 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
       </head>
       
       
-      
       <body>
-        <pre id="content">${content}</pre>
-        <button onclick="navigator.clipboard.writeText(document.getElementById('content').innerText)">
-          📋 복사하기
-        </button>
-      </body>
-      </html>
+      <pre id="content">${content}</pre>
+      <button onclick="
+        navigator.clipboard.writeText(document.getElementById('content').innerText);
+        this.innerText='✅ 복사됨!';
+        setTimeout(()=>this.innerText='📋 복사하기',1500);
+      ">
+        📋 복사하기
+      </button>
+    </body>
+    </html>
     `);
-
        win.document.close();
   }
 
