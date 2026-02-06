@@ -29,8 +29,8 @@ button:hover {
 #output {
   white-space: pre-wrap;
   margin-top: 20px;
+}
 
-  #copyButton {
+#copyButton {
     margin-top: 12px;
-  }
 }
