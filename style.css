@@ -16,7 +16,7 @@ main {
   display: flex;
   flex-direction: row;
   gap: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 button {
@@ -36,7 +36,7 @@ button:hover {
 .output-box {
   display: none;
   white-space: pre-wrap;
-  margin-top: 20px;
+  margin-top: 32px;
   padding: 16px;
   border-radius: 10px;
   background: rgba(255,255,255,0.05);
