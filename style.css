@@ -12,16 +12,11 @@ main {
   padding: 40px 24px;
 }
 
-button {
-  display: block;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  background: #38bdf8;
-  color: #020617;
-  cursor: pointer;
-  margin-bottom: 12px;
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 button:hover {
