@@ -8,6 +8,8 @@ const outputWebtoon = document.getElementById("output-webtoon");
 
 const copyButton = document.getElementById("copyButton");
 
+outputMarvel.style.display = "none";
+outputWebtoon.style.display = "none";
 copyButton.style.display = "none";
 
 
@@ -48,7 +50,9 @@ Ben-Day dots
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
-outputWebtoon.textContent = "";
+outputMarvel.style.display = "block";
+outputWebtoon.style.display = "none";
+
 copyButton.style.display = "inline-block";
 copyButton.textContent = "📋 복사하기";
 };
@@ -92,9 +96,11 @@ outputWebtoon.textContent =
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
-  outputMarvel.textContent = "";
+  outputWebtoon.style.display = "block";
+  outputMarvel.style.display = "none";
+  
   copyButton.style.display = "inline-block";
-
+  copyButton.textContent = "📋 복사하기";
 };
 
 
