@@ -59,7 +59,8 @@ Ben-Day dots
 copyButton.onclick = function () {
   navigator.clipboard.writeText(output.textContent);
   copyButton.textContent = "✅ 복사됨!";
+
+  setTimeout(() => {
+    copyButton.textContent = "📋 복사하기";
+  }, 1500);
 };
-
-
-
