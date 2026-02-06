@@ -34,6 +34,7 @@ button:hover {
 }
 
 .output-box {
+  display: none;
   white-space: pre-wrap;
   margin-top: 20px;
   padding: 16px;
