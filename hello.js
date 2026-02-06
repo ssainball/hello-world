@@ -44,7 +44,7 @@ Ben-Day dots
   } else {
     output.textContent = "";
     this.textContent = "슬라이더 데크 프람프트(마벨 코믹스)";
-    coptyButton.style.display = "none";
+    copyButton.style.display = "none";
     isOpen = false;
   }
 };
