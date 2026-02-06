@@ -6,11 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const outputMarvel = document.getElementById("output-marvel");
   const copyMarvel = document.getElementById("copyMarvel");
 
+  /* ========= 웹툰 영역 ========= */
+  const webtoonButton = document.getElementById("webtoonButton");
+  const outputWebtoon = document.getElementById("output-webtoon");
+  const copyWebtoon = document.getElementById("copyWebtoon");
+
+  // 초기 상태
   outputMarvel.style.display = "none";
   copyMarvel.style.display = "none";
-  
-marvelButton.onclick = function () {
-  outputMarvel.textContent =
+  outputWebtoon.style.display = "none";
+  copyWebtoon.style.display = "none";
+
+  /* ========= 마벨 버튼 ========= */
+  marvelButton.onclick = function () {
+    outputMarvel.textContent =
 `[Marvel 코믹스]
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 팝 코믹스
@@ -45,30 +54,24 @@ Ben-Day dots
 
 outputMarvel.style.display = "block";
 copyMarvel.style.display = "inline-block";
-copyMarvel.textContent = "📋 복사하기";
-};
+
+outputWebtoon.style.display = "none";
+copyWebtoon.style.display = "none";
+  };
 
  copyMarvel.onclick = function () {
     navigator.clipboard.writeText(outputMarvel.textContent);
     copyMarvel.textContent = "✅ 복사됨!";
     setTimeout(() => {
-      copyMarvel.textContent = "📋 복사하기";
-    }, 1500);
+      copyMarvel.textContent = "📋 복사하기";}, 1500);
   };
 
 
 /* ======================
    네이버 웹툰 버튼
 ====================== */
-  const webtoonButton = document.getElementById("webtoonButton");
-  const outputWebtoon = document.getElementById("output-webtoon");
-  const copyWebtoon = document.getElementById("copyWebtoon");
-
-  outputWebtoon.style.display = "none";
-  copyWebtoon.style.display = "none";
-
   webtoonButton.onclick = function () {
-    outputWebtoon.textContent =
+      outputWebtoon.textContent =
 `[네이버 웹툰]
 
 ■ 역할: 전문 프레젠테이션 디자이너
@@ -103,16 +106,16 @@ copyMarvel.textContent = "📋 복사하기";
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
   outputWebtoon.style.display = "block";
-    copyWebtoon.style.display = "inline-block";
-    copyWebtoon.textContent = "📋 복사하기";
+  copyWebtoon.style.display = "inline-block";
+    
+  outputMarvel.style.display = "none";
+  copyMarvel.style.display = "none";
   };
 
   copyWebtoon.onclick = function () {
     navigator.clipboard.writeText(outputWebtoon.textContent);
-    copyWebtoon.textContent = "✅ 복사됨!";
-    setTimeout(() => {
-      copyWebtoon.textContent = "📋 복사하기";
-    }, 1500);
+    copyWebtoon.textContent = "✅ 복사됨!"; 
+    setTimeout(() => copyWebtoon.textContent = "📋 복사하기", 1500);
   };
 
 });
