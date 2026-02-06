@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
     if(!win) {
-      alert("팝업이 차단되었습니다. 브라우저 주소창 오른쪽의 팝업 차단을 해제해주세요.");
+      alert("팝업 차단.");
             return;
     }
   
