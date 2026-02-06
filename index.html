@@ -9,29 +9,32 @@
 
   <body>
     <main>
-      <div class="button-group">
-      <button id="myButton">
+
+      <!-- 🔴 마벨 영역 -->
+      <section class="prompt-section">
+      <button id="marvelButton">
         슬라이더 데크 프람프트(마벨코믹스)
       </button>
 
+      <div class="output-box" id="output-marvel"></div>
+      <button class="copyButton" id="copyMarvel" style="display:none;">
+         📋 복사하기
+      </button>
+      </section>
+
+
+      <!-- 🔵 웹툰 영역 -->
+      <section class="prompt-section">
       <button id="webtoonButton">
         슬라이더 데크 프람프트(네이버웹툰)
       </button>
-      </div>
 
-
-
-      <!-- 🔽 출력 영역 묶음 -->
-    <div class="output-wrapper">
-    <div class="output-box" id="output-marvel"></div>
-    <div class="output-box" id="output-webtoon"></div>
-
-    <button id="copyButton" style="display:none;">
-      📋 복사하기
+        <div class="output-box" id="output-webtoon"></div>
+        <button class="copyButton" id="copyWebtoon" style="display:none;">
+            📋 복사하기
     </button>
-    </div>
-
-    
+    </section>
+          
     </main>
 
     <script src="hello.js"></script>
