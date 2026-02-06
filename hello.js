@@ -1,24 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
+  /* ========= 마벨 영역 ========= */
+  const marvelButton = document.getElementById("marvelButton");
+  const outputMarvel = document.getElementById("output-marvel");
+  const copyMarvel = document.getElementById("copyMarvel");
+
+  outputMarvel.style.display = "none";
+  copyMarvel.style.display = "none";
   
-const mainButton = document.getElementById("myButton");
-const webtoonButton = document.getElementById("webtoonButton");
-const outputMarvel = document.getElementById("output-marvel");
-const outputWebtoon = document.getElementById("output-webtoon");
-
-const copyButton = document.getElementById("copyButton");
-
-outputMarvel.style.display = "none";
-outputWebtoon.style.display = "none";
-copyButton.style.display = "none";
-
-
-  /* ======================
-   마벨 버튼
-====================== */
-mainButton.onclick = function () {
+marvelButton.onclick = function () {
   outputMarvel.textContent =
-`[NotebookLM 슬라이드 디자인 요청]
+`[Marvel 코믹스]
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 팝 코믹스
 ■ 카테고리: 카툰
@@ -51,19 +44,32 @@ Ben-Day dots
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
 outputMarvel.style.display = "block";
-outputWebtoon.style.display = "none";
-
-copyButton.style.display = "inline-block";
-copyButton.textContent = "📋 복사하기";
+copyMarvel.style.display = "inline-block";
+copyMarvel.textContent = "📋 복사하기";
 };
+
+ copyMarvel.onclick = function () {
+    navigator.clipboard.writeText(outputMarvel.textContent);
+    copyMarvel.textContent = "✅ 복사됨!";
+    setTimeout(() => {
+      copyMarvel.textContent = "📋 복사하기";
+    }, 1500);
+  };
 
 
 /* ======================
    네이버 웹툰 버튼
 ====================== */
-webtoonButton.onclick = function(){
-outputWebtoon.textContent = 
-`[NotebookLM 슬라이드 디자인 요청]
+  const webtoonButton = document.getElementById("webtoonButton");
+  const outputWebtoon = document.getElementById("output-webtoon");
+  const copyWebtoon = document.getElementById("copyWebtoon");
+
+  outputWebtoon.style.display = "none";
+  copyWebtoon.style.display = "none";
+
+  webtoonButton.onclick = function () {
+    outputWebtoon.textContent =
+`[네이버 웹툰]
 
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 웹툰 스타일
@@ -97,22 +103,17 @@ outputWebtoon.textContent =
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
   outputWebtoon.style.display = "block";
-  outputMarvel.style.display = "none";
-  
-  copyButton.style.display = "inline-block";
-  copyButton.textContent = "📋 복사하기";
-};
+    copyWebtoon.style.display = "inline-block";
+    copyWebtoon.textContent = "📋 복사하기";
+  };
 
-
-/* ======================
-   복사 버튼
-====================== */
-copyButton.onclick = function () {
-  const text = outputMarvel.textContent || outputWebtoon.textContent;
-  navigator.clipboard.writeText(text);
-  copyButton.textContent = "✅ 복사됨!";
-  setTimeout(() => copyButton.textContent = "📋 복사하기", 1500);
-
-};
+  copyWebtoon.onclick = function () {
+    navigator.clipboard.writeText(outputWebtoon.textContent);
+    copyWebtoon.textContent = "✅ 복사됨!";
+    setTimeout(() => {
+      copyWebtoon.textContent = "📋 복사하기";
+    }, 1500);
+  };
 
 });
+
