@@ -33,9 +33,13 @@ button:hover {
   opacity: 0.9;
 }
 
-#output {
+.output-box {
   white-space: pre-wrap;
   margin-top: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 #copyButton {
