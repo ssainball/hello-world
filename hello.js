@@ -42,7 +42,7 @@ Ben-Day dots
     isOpen = true;
   } else {
     output.textContent = "";
-    this.textContent = "버튼을 누르면 슬라이더 데크 프람프트 출력";
+    this.textContent = "슬라이더 데크 프람프트(마벨 코믹스)";
     isOpen = false;
   }
 };
