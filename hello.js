@@ -39,10 +39,17 @@ Ben-Day dots
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
 
     this.textContent = "닫기";
+    copyButton.style.display = "inline-block";
     isOpen = true;
   } else {
     output.textContent = "";
     this.textContent = "슬라이더 데크 프람프트(마벨 코믹스)";
+    coptyButton.style.display = "none";
     isOpen = false;
   }
+};
+
+copyButton.onclick = function () {
+  navigator.clipboard.writeText(output.textContent);
+  copyButton.textContent = "✅ 복사됨!";
 };
