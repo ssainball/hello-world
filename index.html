@@ -50,11 +50,21 @@
     const button = document.getElementById("notebookLMbutton");
     const artifactSection = document.querySelector(".artifact");
 
+    let isVisible = false;
+    
     button.addEventListener("click", function() {
+      if (isVisible === false) {
       artifactSection.innerHTML = `
         <h2> ⚡Artifact 내용 </h2>
         <p> 버튼을 누르면이 글이 나타납니다. </p>
       `;
+        button.textContent = "닫기";
+        isVisible = true;
+    } else {
+        artifactSection.innerHTML = "";
+        button.textContent = "눌러보세요";
+        isVisible = false;
+      }
     });
   </script>
   
