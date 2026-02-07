@@ -1,74 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-  const marvelButton = document.getElementById("marvelButton");
-  const webtoonButton = document.getElementById("webtoonButton");
+  /* =========================
+     공통 출력 함수
+  ========================= */
+  function showPrompt(targetId, copyBtnId, text) {
+    const outputBox = document.getElementById(targetId);
+    const copyBtn = document.getElementById(copyBtnId);
 
-  function openPromptWindow(title, content) {
-    const win = window.open(
-      "",
-      "_blank",
-      "width=720,height=900,noopener,noreferrer"
-      );
+    outputBox.textContent = text;
+    copyBtn.style.display = "inline-block";
 
-    if(!win) {
-      alert("팝업 차단.");
-            return;
-    }
-  
-    win.document.write(`
-      <!DOCTYPE html>
-      <html lang="ko">
-      <head>
-        <meta charset="UTF-8" />
-        <title>${title}</title>
-        <style>
-          body {
-            margin: 0;
-            padding: 24px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0f172a;
-            color: #e5e7eb;
-          }
-          pre {
-            white-space: pre-wrap;
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.12);
-          }
-          button {
-            margin-top: 16px;
-            padding: 10px 16px;
-            font-size: 14px;
-            border-radius: 8px;
-            border: none;
-            background: #38bdf8;
-            color: #020617;
-            cursor: pointer;
-          }
-        </style>
-      </head>
-      
-      
-      <body>
-      <pre id="content">${content}</pre>
-      <button onclick="
-        navigator.clipboard.writeText(document.getElementById('content').innerText);
-        this.innerText='✅ 복사됨!';
-        setTimeout(()=>this.innerText='📋 복사하기',1500);
-      ">
-        📋 복사하기
-      </button>
-    </body>
-    </html>
-    `);
-       win.document.close();
+    copyBtn.onclick = () => {
+      navigator.clipboard.writeText(text);
+      copyBtn.innerText = "✅ 복사됨!";
+      setTimeout(() => copyBtn.innerText = "📋 복사하기", 1500);
+    };
   }
 
-  /* ========= 마벨 버튼 ========= */
-  marvelButton.onclick = function () {
-    openPromptWindow(
-     "Marvel Comic Prompt",
+  /* =========================
+     마벨 버튼
+  ========================= */
+  document.getElementById("marvelButton").onclick = () => {
+    showPrompt(
+      "output-marvel",
+      "copyMarvel",
 `[Marvel 코믹스]
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 팝 코믹스
@@ -100,19 +55,17 @@ Ben-Day dots
 ━━━━━━━━━━━━━━━━━━━━━━
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`
-      );
+    );
   };
 
-
-
-/* ======================
-   네이버 웹툰 버튼
-====================== */
-    webtoonButton.onclick = function () {
-    openPromptWindow(
-      "Naver Webtoon Prompt",
+  /* =========================
+     웹툰 버튼
+  ========================= */
+  document.getElementById("webtoonButton").onclick = () => {
+    showPrompt(
+      "output-webtoon",
+      "copyWebtoon",
 `[네이버 웹툰]
-
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 웹툰 스타일
 ■ 카테고리: 카툰
@@ -143,7 +96,7 @@ Ben-Day dots
 ━━━━━━━━━━━━━━━━━━━━━━
 
 위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`
-      );
+    );
   };
-});
 
+});
