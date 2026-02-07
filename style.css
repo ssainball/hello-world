@@ -34,19 +34,24 @@ button:hover {
 }
 
 .output-box {
-  display: none;
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #0f172a;
+  color: #e5e7eb;
   white-space: pre-wrap;
-  margin-top: 32px;
-  padding: 16px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.12);
+  font-family: system-ui, monospace;
+}
+
+.copyButton {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .output-wrapper {
   margin-top: 20px;
 }
 
-#copyButton {
-    margin-top: 12px;
-}
