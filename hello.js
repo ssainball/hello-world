@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function openPromptWindow(title, content) {
     const win = window.open(
-      "about:blank",
+      "",
       "_blank",
       "width=720,height=900,noopener,noreferrer"
       );
