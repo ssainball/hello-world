@@ -31,6 +31,8 @@ button {
 
 button:hover {
   opacity: 0.9;
+  transform: translateY(-1px); /* 살짝 위로 떠오르는 효과 */
+  transition: all 0.2s ease;
 }
 
 .output-box {
