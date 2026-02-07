@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================
-     공통 출력 함수
-  ========================= */
+      공통 출력 함수 (기존 유지)
+     ========================= */
   function showPrompt(targetId, copyBtnId, text) {
     const outputBox = document.getElementById(targetId);
     const copyBtn = document.getElementById(copyBtnId);
@@ -18,13 +18,59 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     마벨 버튼
-  ========================= */
+      새 창 열기 함수 (마벨 전용)
+     ========================= */
+  function openInNewWindow(title, text) {
+    // 새 창의 크기 및 설정
+    const width = 600;
+    const height = 700;
+    const left = (window.screen.width / 2) - (width / 2);
+    const top = (window.screen.height / 2) - (height / 2);
+    
+    const newWin = window.open("", "_blank", `width=${width},height=${height},left=${left},top=${top},scrollbars=yes`);
+    
+    // 새 창에 들어갈 HTML 구조 및 스타일
+    const htmlContent = `
+      <html>
+      <head>
+        <title>${title}</title>
+        <style>
+          body { font-family: 'Malgun Gothic', sans-serif; padding: 20px; line-height: 1.6; background-color: #f4f4f4; }
+          pre { background: #fff; padding: 15px; border: 2px solid #000; white-space: pre-wrap; word-wrap: break-word; }
+          .copy-btn { 
+            background: #FF0000; color: #fff; border: none; padding: 10px 20px; 
+            cursor: pointer; font-weight: bold; margin-bottom: 10px; border-radius: 5px;
+          }
+          .copy-btn:active { background: #cc0000; }
+        </style>
+      </head>
+      <body>
+        <h2>⚡ ${title} 프롬프트</h2>
+        <button id="winCopyBtn" class="copy-btn">📋 이 서식 복사하기</button>
+        <pre id="content">${text}</pre>
+        <script>
+          document.getElementById('winCopyBtn').onclick = () => {
+            const text = document.getElementById('content').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+              const btn = document.getElementById('winCopyBtn');
+              btn.innerText = "✅ 복사 완료!";
+              setTimeout(() => btn.innerText = "📋 이 서식 복사하기", 1500);
+            });
+          };
+        <\/script>
+      </body>
+      </html>
+    `;
+    
+    newWin.document.write(htmlContent);
+    newWin.document.close();
+  }
+
+  /* =========================
+      마벨 버튼 (새 창 버전)
+     ========================= */
   document.getElementById("marvelButton").onclick = () => {
-    showPrompt(
-      "output-marvel",
-      "copyMarvel",
-`[Marvel 코믹스]
+    const marvelText = `[Marvel 코믹스]
 ■ 역할: 전문 프레젠테이션 디자이너
 ■ 스타일: 팝 코믹스
 ■ 카테고리: 카툰
@@ -54,13 +100,14 @@ Ben-Day dots
 
 ━━━━━━━━━━━━━━━━━━━━━━
 
-위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`
-    );
+위 가이드를 바탕으로 고품질 슬라이드를 생성해주세요.`;
+
+    openInNewWindow("Marvel 스타일 가이드", marvelText);
   };
 
   /* =========================
-     웹툰 버튼
-  ========================= */
+      웹툰 버튼 (기존 방식 유지)
+     ========================= */
   document.getElementById("webtoonButton").onclick = () => {
     showPrompt(
       "output-webtoon",
